@@ -1,0 +1,104 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--second-typo);
+    background-image: var(--background);
+    box-sizing: border-box;
+    background-size: cover;
+    height: fit-content;
+    padding-bottom: 30px;
+    color: white; /* Couleur du texte */
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    box-sizing:border-box;
+    width: 60vw;
+    border: 1.5px solid silver;
+    margin-top: 10vh;
+    left: 50%;
+    margin-bottom: 40px;
+    transform: translateX(-50%);
+}
+
+.profile {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: #247563;
+    align-items: center;
+    padding: 1.3vh 0;
+}
+
+.pfp-image {
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    height: 13vh;
+    border: 1.4px solid black;
+}
+
+.pfp-user {
+    font-size: 1.3vw;
+    margin-top: 1vh;
+    text-transform: capitalize;
+}
+
+.tab_info {
+    background-color: orange;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tab_info th, .tab_info td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.tab_achievement,
+#levels {
+    border-collapse: collapse;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.tab_achievement th, .tab_achievement td,
+#levels th, #levels td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid orange;
+    background-color: var(--accent-theme-color);
+}
+
+.tab_achievement th,
+#levels th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: orange;
+    border-color: black;
+}
+
+.info {
+    flex-grow: 1; /* Permet à la section info de prendre tout l'espace disponible */
+    display: flex;
+    flex-direction: column;
+    z-index: -1;
+}
+
+.achievements {
+    overflow-y: auto;
+    width: 100%;
+    max-height: 21vh; /* Hauteur du conteneur moins la hauteur des autres éléments */
+}
+
+#levels {
+    border-top: 1.5px solid white;
+    flex-grow: 1;
+    background-color: orange;
+    border-collapse: collapse;
+}

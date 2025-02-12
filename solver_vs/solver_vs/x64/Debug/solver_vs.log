@@ -1,0 +1,8 @@
+﻿  dificulte.c
+C:\Users\mathis.van-uytvanck\Documents\cartable\projet fin d'anner\grp02-DAEDALUS\solver_vs\solver_vs\dificulte.c(249,15): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  main.c
+C:\Users\mathis.van-uytvanck\Documents\cartable\projet fin d'anner\grp02-DAEDALUS\solver_vs\solver_vs\main.c(13,11): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
+C:\Users\mathis.van-uytvanck\Documents\cartable\projet fin d'anner\grp02-DAEDALUS\solver_vs\solver_vs\main.c(144,9): warning C4033: 'gestion_solver' doit retourner une valeur
+  Génération de code en cours...
+C:\Users\mathis.van-uytvanck\Documents\cartable\projet fin d'anner\grp02-DAEDALUS\solver_vs\solver_vs\main.c(221): warning C4715: 'gestion_solver' : les chemins de contrôle ne retournent pas tous une valeur
+  solver_vs.vcxproj -> C:\Users\mathis.van-uytvanck\Documents\cartable\projet fin d'anner\grp02-DAEDALUS\solver_vs\x64\Debug\solver_vs.exe

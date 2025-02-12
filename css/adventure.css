@@ -1,0 +1,143 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-image: var(--background);
+}
+
+.modes {
+  margin-top: 2vh; /* Utiliser vh pour la marge */
+  text-decoration: none;
+  font-size: 2.2vw; /* Utiliser vw pour la taille de texte */
+  text-align: center;
+  color: white;
+  font-family: var(--second-typo);
+}
+
+.checkbox {
+  display: none;
+  color: white;
+  font-size: 1.6vw; /* Utiliser vw pour la taille de texte */
+}
+
+.slider {
+  position: relative;
+  width: 4vw; /* Utiliser vw pour la largeur */
+  height: 4vh; /* Utiliser vh pour la hauteur */
+  background-color: lightgray;
+  border-radius: 2vw; /* Utiliser vw pour le border-radius */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 0.3vw solid transparent; /* Utiliser vw pour la bordure */
+  transition: .3s;
+  box-shadow: 0 0 1vw 0 rgb(0, 0, 0, 0.25) inset; /* Utiliser vw pour l'ombre */
+  cursor: pointer;
+}
+
+.switch {
+  font-family: var(--second-typo);
+  font-size: 1.3vw; /* Utiliser vw pour la taille de texte */
+  position: relative;
+  display: flex;
+  width: 12vw; /* Utiliser vw pour la largeur */
+  height: 4vh; /* Utiliser vh pour la hauteur */
+  color: white;
+  flex-direction: row;
+  align-items: center;
+  gap: 1vw; /* Utiliser vw pour l'écart */
+  left: 69%;
+}
+
+.slider::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(-2vw); /* Utiliser vw pour la translation */
+  border-radius: 2vw; /* Utiliser vw pour le border-radius */
+  transition: .3s;
+  box-shadow: 0 0 1vw 0.3vw rgb(0, 0, 0, 0.25); /* Utiliser vw pour l'ombre */
+}
+
+.checkbox:checked ~ .slider::before {
+  transform: translateX(2vw); /* Utiliser vw pour la translation */
+  box-shadow: 0 0 1vw 0.3vw rgb(0, 0, 0, 0.25); /* Utiliser vw pour l'ombre */
+}
+
+.checkbox:checked ~ .slider {
+  background-color: #9DFF6F;
+}
+
+.checkbox:active ~ .slider::before {
+  transform: translate(0);
+}
+
+.container {
+  font-family: var(--second-typo);
+  font-weight: 300;
+  font-size: 2.2vw; /* Utiliser vw pour la taille de texte */
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  gap: 5vw; /* Utiliser vw pour l'écart */
+  margin: 2vh 0; /* Utiliser vh pour la marge */
+}
+
+.easy, .medium, .hard {
+  width: 17vw; /* Utiliser vw pour la largeur */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  border: 0.3vw solid white; /* Utiliser vw pour la bordure */
+}
+
+.easy p, .medium p, .hard p {
+  color: black;
+  width: 100%;
+  padding-top: 0.5vh; /* Utiliser vh pour le padding */
+  padding-bottom: 0.5vh; /* Utiliser vh pour le padding */
+  border-bottom: 0.3vw solid white; /* Utiliser vw pour la bordure */
+  text-align: center;
+  font-size: 1.8vw; /* Utiliser vw pour la taille de texte */
+}
+
+.easy a, .medium a, .hard a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 7vh 0; /* Utiliser vh pour la marge */
+  color: white;
+  text-decoration: none;
+  font-size: 1.7vw; /* Utiliser vw pour la taille de texte */
+}
+
+.backeasy {
+  background-color: #C9FFAF;
+}
+.backmed {
+  background-color: #FFF2AF;
+}
+.backhard {
+  background-color: #FFAFAF;
+}
+
+.diff {
+  display: flex;
+  position: relative;
+  width: 7vw; /* Utiliser vw pour la largeur */
+  top: 5vh; /* Utiliser vh pour la position */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.6vw; /* Utiliser vw pour la taille de texte */
+  font-family: var(--second-typo);
+  padding: 1vh 6vw; /* Utiliser vh pour le padding vertical et vw pour le padding horizontal */
+  background-color: #850000;
+  border: 0.2vw solid black; /* Utiliser vw pour la bordure */
+  color: white;
+  text-decoration: none;
+}

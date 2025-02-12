@@ -1,0 +1,117 @@
+* {
+    scroll-margin-top: calc(var(--footer-height) + 50px);
+}
+
+main {
+    flex-direction: row;
+    align-items: start;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+menu {
+    min-width: fit-content;
+    width: 15%;
+    top: 110px;
+    position: sticky;
+    margin-right: 20px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px) invert(10%);
+}
+
+menu a {
+    padding: 7px;
+    margin: 2px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all .2s;
+}
+
+menu a:hover {
+    background-color: var(--tertiary-theme-color);
+}
+
+
+
+input {
+    width: max-content;
+}
+
+input[type="submit"], input[type="button"] {
+    width: fit-content;
+    font-size: .75em;
+    text-decoration: none;
+    line-height: auto;
+}
+
+hr {
+    margin: 20px;
+    width: 100%;
+    border: 1.5px solid var(--theme-accent-color);
+}
+
+#main-object {
+    border-left: 2px solid var(--theme-accent-color);
+    padding-left: 10px;
+    margin-left: 10px;
+    width: 100%;
+}
+
+#pfp-container {
+    width: min(10vh, 30vw);
+    aspect-ratio: 1/1;
+    border: 2px solid var(--theme-accent-color);
+    border-radius: 100vh;
+    position: relative;
+    margin: 0 30px;
+}
+
+#pfp-preview {
+    width: inherit;
+    border-radius: inherit;
+    transition: none;
+    aspect-ratio: 1/1;
+}
+
+#pfp-overlay {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: inherit;
+    background-color: rgba(0, 0,0,0.6);
+    opacity: 0;
+    transition: opacity .2s linear;
+    cursor: pointer;
+    text-align: center;
+    padding: 15px;
+}
+
+#pfp-overlay > p {
+    color: white;
+}
+
+#pfp-overlay * {
+    cursor: pointer;
+}
+
+#pfp-overlay:hover {
+    opacity: 1;
+}
+
+#deleteAccount {
+    --theme-accent-color: red;
+}

@@ -1,0 +1,161 @@
+body {
+    font-family: var(--second-typo);
+    padding-bottom: 50px;
+}
+
+.modes {
+    margin-top: 2vh;
+    /* Utiliser vh pour la marge */
+    text-decoration: underline;
+    font-size: 2.2vw;
+    /* Utiliser vw pour la taille de texte */
+    text-align: center;
+    color: white;
+}
+
+.tableauClassement {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 7vh 6vh auto;
+    grid-template-areas: "title title title title title title title"
+        "levelsTitle nbMovesTitle nbMovesTitle nbMovesTitle timeScoreTitle timeScoreTitle timeScoreTitle"
+        "levels nbMoves nbMoves nbMoves timeScore timeScore timeScore";
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0.3vw solid #111D26;
+    ;
+}
+
+.tableauClassementInfini {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7vh 6vh auto;
+    grid-template-areas: "title"
+        "level_max_title"
+        "level_max";
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0.3vw solid #111D26;
+    ;
+}
+
+.level_max_title {
+    grid-area: level_max_title;
+    border-bottom: 0.3vw solid #111D26;
+    background-color: #247563;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+}
+
+.max_inf {
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1vw;
+    background-color: #111D26;
+}
+
+.title {
+    grid-area: title;
+    border-bottom: 0.3vw solid #111D26;
+    background-color: #247563;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7vw;
+    text-decoration: underline;
+}
+
+.levelsTitle {
+    grid-area: levelsTitle;
+    border-bottom: 0.3vw solid #111D26;
+    background-color: #247563;
+    border-right: 0.3vw solid #111D26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+}
+
+.levelTitle {
+    height: 4vh;
+    border-right: 0.3vw solid #111D26;
+    background-color: #101C20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1vw;
+}
+
+.levelTitle:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.level-moves {
+    height: 4vh;
+    border-right: 0.3vw solid #111D26;
+    background-color: #111D26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1vw;
+}
+
+.level-ts {
+    height: 4vh;
+    border-right: 0.3vw solid #111D26;
+    background-color: #111D26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1vw;
+}
+
+.nbMovesTitle {
+    grid-area: nbMovesTitle;
+    border-bottom: 0.3vw solid #111D26;
+    background-color: #247563;
+    border-right: 0.3vw solid #111D26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+}
+
+.timeScoreTitle {
+    grid-area: timeScoreTitle;
+    border-bottom: 0.3vw solid #111D26;
+    background-color: #247563;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+}
+
+.levels {
+    grid-area: levels;
+}
+
+.nbMoves {
+    grid-area: nbMoves;
+}
+
+.timeScore {
+    grid-area: timeScore;
+}
+
+.hidden {
+    display: none;
+}
+
+.underlined {
+    text-decoration: underline;
+}

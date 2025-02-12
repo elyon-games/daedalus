@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Style de la bannière */
+#banner {
+    font-family: var(--second-typo);
+    position: relative;
+    left: -0.5vw;
+    top: -0.5vh;
+    width: 100vw;
+    height: 15.6vh;
+    background-image: url(/images/banner.png);
+    color: white;
+    font-size: 3vw; /* Utiliser vw pour les tailles de texte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-image: var(--background);
+}
+
+.error {
+    background-color: red;
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    width: 100%; /* Prendre toute la largeur */
+}
+
+.diverror {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Prendre toute la largeur */
+    z-index: 10 ;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    gap: 6vw; /* Utiliser vw pour l'écart */
+}
+
+.login {
+    top: -3vh;
+}
+.signup{
+    top: 3vh;
+}
+
+.title {
+    text-decoration: underline;
+}
+
+/* Styles pour aligner les formulaires et ajouter une bordure noire */
+.form-wrapper {
+    width: 25vw; /* Utiliser vw pour la largeur */
+    height: auto;
+    border-image: linear-gradient(#64ACAA, #31605F, #1B3535, #63ABAB) 30;
+    border-width: 0.3vw; /* Utiliser vw pour la largeur de la bordure */
+    border-style: solid;
+    padding: 1.5vw; /* Utiliser vw pour le padding */
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 0.5vw 0; /* Utiliser vw pour la marge */
+    width: 100%;
+}
+
+/* Style global pour centrer les titres et le conteneur principal */
+.title {
+    font-family: var(--second-typo);
+    text-align: center;
+    color: white;
+    font-size: 1.5vw; /* Utiliser vw pour la taille de texte */
+    font-weight: 300;
+    margin: 0.1vw 0 1vw 0; /* Utiliser vw pour la marge */
+}
+
+label {
+    color: white;
+    font-family: var(--second-typo);
+    font-size: 1vw; /* Utiliser vw pour la taille de texte */
+    padding: 0.1vw 0;
+    text-align: center;
+}
+.forgetpwd{
+    text-decoration: underline;
+    color :white;
+    text-align: center;
+    gap: 0.7vw; /* Utiliser vw pour l'écart */
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    border-radius: 1vw; /* Utiliser vw pour le border-radius */
+    border: 0.1vw solid darkgrey; /* Utiliser vw pour la bordure */
+    background-color: white;
+    color: black;
+    outline: none;
+    font-size: 1vw; /* Utiliser vw pour la taille de texte */
+    padding: 0.5vw 1vw; /* Utiliser vw pour le padding */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.signupbtn, .loginbtn {
+    margin: 0 auto;
+    padding: 0.5vw 1.6vw; /* Utiliser vw pour le padding */
+    position: relative;
+    display: flex;
+    bottom: -1vw; /* Utiliser vw pour la position */
+    justify-content: center;
+    background-color: black;
+    border: 0.2vw solid darkgrey; /* Utiliser vw pour la bordure */
+    border-radius: 1.5vw; /* Utiliser vw pour le border-radius */
+    font-size: 1.2vw; /* Utiliser vw pour la taille de texte */
+}
+
+.signupbtn:hover, .loginbtn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.conditions-accept {
+    display: flex;
+    color: white;
+    margin-top: 0.5vw; /* Utiliser vw pour la marge */
+    width: 100%;
+    gap: 0.5vw; /* Utiliser vw pour l'écart */
+}

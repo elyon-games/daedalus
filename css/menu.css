@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background) center/cover no-repeat;
+    font-family: var(--second-typo);
+}
+
+#banner {
+    position: relative;
+    height: 15vh; /* Utiliser vh pour la hauteur */
+    background-image: url(/images/banner.png);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+.gamename{
+    font-size: 3vw;
+    font-weight: 300;
+}
+#banner h2 {
+    font-family: var(--second-typo);
+    font-size: 3vw; /* Utiliser vw pour la taille de texte */
+}
+
+.modes {
+    margin-top: 2vh; /* Utiliser vh pour la marge */
+    text-decoration: underline;
+    font-size: 2vw; /* Utiliser vw pour la taille de texte */
+    text-align: center;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 5vw; /* Utiliser vw pour l'écart */
+    margin-top: 2vh; /* Utiliser vh pour la marge */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 20vw; /* Utiliser vw pour la largeur */
+}
+
+.img {
+    width: 98.8%; /* Assurer que l'image prend toute la largeur */
+    height: auto; /* Maintenir le ratio d'aspect */
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    gap: 5vw; /* Utiliser vw pour l'écart */
+    margin-top: 10vh; /* Utiliser vh pour la marge */
+}
+
+.dropbtn {
+    font-size: 2vw; /* Utiliser vw pour la taille de texte */
+    text-align: center;
+    color: white;
+    background-color: #247563;
+    text-decoration: none;
+    border: 0.2vw solid black; /* Utiliser vw pour la bordure */
+    padding: 1vh; /* Utiliser vh pour le padding */
+    box-sizing: border-box;
+    display: block;
+    width: 100%; /* Assurer que le bouton prend toute la largeur */
+}
+
+.dropbtn:hover {
+    color: black;
+}
+
+.adve {
+    background-color: #4C8684;
+}
+
+.crea {
+    background-color: #4C8684;
+}
+
+.inf {
+    background-color: #4C8684;
+}
+
+.adventu {
+    background-color: #752424;
+}
+
+.creativ {
+    background-color: #347524;
+}
+
+.infini {
+    background-color: #757224;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    color: black;
+    z-index: 1;
+    overflow: hidden;
+    padding: 1vh; /* Utiliser vh pour le padding */
+    font-size: 1vw; /* Utiliser vw pour la taille de texte */
+    text-align: center;
+    left: 0;
+    top: calc(80%);
+    width: 100%; /* Assurer que le contenu du dropdown prend toute la largeur */
+    box-sizing: border-box;
+    border: 0.2vw solid black; /* Utiliser vw pour la bordure */
+    transition: opacity 0.3s ease-out;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+}
+
+.dropdown:hover .img,
+.dropdown:hover .dropbtn {
+    color: black;
+}
+
+.container2 > a {
+    width: 20vw; /* Utiliser vw pour la largeur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: #247563;
+    border: 0.2vw solid black; /* Utiliser vw pour la bordure */
+    padding: 1vh 0; /* Utiliser vh pour le padding */
+    font-size: 2vw; /* Utiliser vw pour la taille de texte */
+    transition: background-color 0.3s ease;
+}
+
+.container2 > a:hover {
+    background-color: darkcyan;
+    color: black;
+}
+
+.pfp {
+    height: 70%;
+}

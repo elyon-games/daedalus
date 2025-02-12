@@ -1,0 +1,323 @@
+/* Variables utiles */
+
+:root {
+    /* Variables inutilisés, servent en tant que reminder des valeurs à utiliser en media-query*/
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+
+    /* Variables de thème */
+    --main-theme-color: black;
+    --accent-theme-color: #1e3c3b;
+    --accent-theme-color-2: #65acaa;
+    --text-theme-color: white;
+    --main-typo: "Kaushan Script";
+    --second-typo: "Kelly Slab";
+    --background: url(/images/background.png);
+}
+
+* {
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    color: var(--text-theme-color);
+    transition: all .5s;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: black;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background: var(--background) center/cover no-repeat;
+    background-attachment: fixed;
+    z-index: -10;
+}
+  
+/* --------------------------------- USEFUL CLASSES --------------------------------- */
+
+.container {
+    display: flex;
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+}
+
+p.center {
+    text-align: center;
+}
+
+/* Classe pour afficher les messages d'erreur */
+.error,
+.confirm,
+.warn {
+    border-radius: 15px;
+    padding: 10px 15px;
+    box-sizing: content-box;
+    max-width: 35vw;
+    width: fit-content;
+    display: block;
+}
+
+.confirm {
+    background-color: rgba(0, 140, 0, 0.5)
+}
+
+.confirm,
+.confirm * {
+    color: limegreen;
+    margin: 5px;
+}
+
+.warn {
+    background-color: rgba(183, 110, 1, 0.5)
+}
+
+.warn,
+.warn * {
+    color: orangered;
+    margin: 5px;
+}
+
+.error {
+    background-color: rgba(140, 0, 20, 0.5)
+}
+
+.error,
+.error * {
+    color: rgba(220, 0, 0, 0.9);
+    margin: 5px;
+}
+
+.error-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.check-box {
+    cursor: pointer;
+}
+
+.check-box input {
+    display: none;
+}
+
+.check-box svg {
+    width: 20px;
+    height: 20px;
+    overflow: visible;
+}
+
+.check-box path {
+    fill: none;
+    stroke: var(--text-theme-color);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease, stroke .5s ease;
+    stroke-dasharray: 241 9999999;
+    stroke-dashoffset: 0;
+}
+
+.check-box input:checked~svg path {
+    stroke: var(--accent-theme-color);
+    stroke-dasharray: 70.5096664428711 9999999;
+    stroke-dashoffset: -262.2723388671875;
+}
+
+.glowingBox {
+    background-color: var(--main-theme-color);
+  padding: 10px;
+  margin: 15px;
+  position: relative;
+}
+
+.glowingBox::before,
+.glowingBox::after {
+    content: "";
+  position: absolute;
+  inset: -0.5rem;
+  z-index: -1;
+  background-image: conic-gradient(from var(--gradient-angle),
+      var(--accent-theme-color),
+      var(--accent-theme-color-2),
+      var(--accent-theme-color),
+      var(--accent-theme-color-2),
+      var(--accent-theme-color));
+  border-radius: inherit;
+  animation: rotation 3s linear infinite;
+}
+
+.glowingBox::after {
+    filter: blur(3.5rem);
+}
+
+@keyframes rotation {
+    from {
+        --gradient-angle: 0deg;
+    }
+
+    to {
+        --gradient-angle: 360deg;
+    }
+}
+
+/* --------------------------------- HEADER --------------------------------- */
+header{
+    font-family: var(--second-typo);
+    background: url(/images/banner.png) center/cover no-repeat;
+    padding : 10px;
+    height: 15vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+    gap: 1%;
+    box-sizing: border-box;
+}
+.GameName{ 
+    color: white;
+    position: absolute;
+    font-size: 3vw;
+    font-weight: 300;
+    left: 4vw;
+}
+.headbtn{
+    display: flex;
+    gap: 3vw;
+    position: absolute;
+    left: 22vw;
+}
+.menu{
+    display: flex;
+    position: absolute;
+    right: 20vw;
+}
+.imggrad{
+    width: 12vw;;
+    max-width: 153px;
+}
+.cla{
+    width: 40px; 
+    height: 40px; 
+}
+.wiki{
+    width: 40px; 
+    height: 40px;
+}
+.pfp {
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    z-index: 20;
+    justify-content: center;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.pfp .usertag {
+    font-family: var(--second-typo);
+    text-transform: capitalize;
+    width: fit-content;
+    max-width: 10vw;
+    font-size: 20px;
+    color: white;
+    text-align: end;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.pfp .rond {
+    --height: 100vh;
+    --width: 100vw;
+    max-height: 100%;
+    max-width: 100%;
+    width: fit-content;
+    height: fit-content;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center align items */
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 128px;
+    background-color: black    ;
+    transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-decoration: none;
+    align-items: center;
+    border: solid 2.5px white;
+}
+.pfp .profile-image {
+    aspect-ratio: 1/1;
+    height: 100%;
+    border-radius: 128px;
+    border: 2px solid black;
+    z-index: 10;
+    border: 2px solid white;
+}
+
+.rond.nav-opened {
+    max-height: var(--height);
+    max-width: var(--width);
+    top:100%;
+    aspect-ratio: unset;
+    border-radius: 5px;
+}
+
+.pfp > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    width: fit-content; /* Match the width of the rond */
+}
+.pfp .rond a,
+.pfp .rond a {
+    display: flex;
+    text-align: end;
+    align-items: start;
+    justify-content: start;
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px; /* Adjusted padding */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make links take full width */
+}
+
+.pfp .rond a img {
+    position: relative;
+    margin-right: 10px; /* Space between the icon and the text */
+    width: 20px; /* Icon width */
+    height: 20px; /* Icon height */
+}
+
+.pfp .rond a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Background color on hover */
+}

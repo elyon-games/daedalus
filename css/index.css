@@ -1,0 +1,206 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(/images/accueil.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+#banner {
+    font-family: var(--second-typo);
+    position: relative;
+    width: 100vw;
+    height: 15.6vh;
+    background-image: url(/images/banner.png);
+    color: white;
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 10px #1e3c3b;
+}
+
+.gros-container {
+    margin-top: 2.5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 27.5vh;
+}
+
+.container {
+    position: relative;
+    top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 55vw;
+    height: auto;
+    font-size: 22px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lore {
+    color: white;
+}
+
+.container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 17.5vw;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.glowbtn {
+    height: 80px;
+    width: 250px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease-in-out;
+}
+
+.glowbtn::before {
+    content: '';
+    background-image: conic-gradient(
+        from var(--gradient-angle),
+        #65acaa,
+        #1e3d3b,
+        #64aba9,
+        #1e3c3b,
+        #65acaa);
+    width: 1200%;
+    height: 1200%;
+    position: absolute;
+    animation: rotate 3s linear infinite;
+    animation-delay: -50ms;
+    transition: .5s ease-in-out;
+    filter: blur(5px); /* Ajout du flou */
+    z-index: 1;
+}
+
+.glowbtn::after {
+    font-family: var(--second-typo);
+    content: "Play";
+    height: 70px;
+    width: 240px;
+    background: #101010;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+    font-weight: 700;
+    transition: .5s ease-in-out;
+    z-index: 2;
+}
+
+.glowbtn:hover {
+    cursor: pointer;
+}
+
+.glowbtn:hover::after {
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes rotate {
+    0% {
+        --gradient-angle: 0deg;
+    }
+    100% {
+        --gradient-angle: 360deg;
+    }
+}
+
+.glowlore {
+    position: relative;
+    height: auto;
+    width: 56vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease-in-out;
+    padding: 10px; /* Ajuster selon vos besoins */
+    background: #101010; /* Ajout du fond */
+}
+
+.glowlore::before {
+    content: '';
+    background-image: conic-gradient(
+        from var(--gradient-angle),
+        #65acaa,
+        #1e3d3b,
+        #64aba9,
+        #1e3c3b,
+        #65acaa);
+    width: 600%;
+    height: 600%;
+    position: absolute;
+    animation: rotate 3s linear infinite;
+    transition: .5s ease-in-out;
+    filter: blur(5px); /* Ajout du flou */
+    z-index: 0;
+}
+
+.glowlore::after {
+    font-family: var(--second-typo);
+    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptatibus et blanditiis expedita aliquam possimus neque doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptatibus et blanditiis expedita aliquam possimus neque doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit.";
+    height: auto;
+    width: 100%;
+    background: #101010;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px; /* Ajuster selon vos besoins */
+    letter-spacing: 3px;
+    font-weight: 700;
+    transition: .5s ease-in-out;
+    z-index: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 10px; /* Ajouter du padding pour un meilleur espacement */
+}
+
+/* Supprimer l'effet de survol sur le lore */
+.glowlore:hover::before {
+    animation: rotate 3s linear infinite;
+}
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+.glowingBox{
+    font-family: var(--second-typo);
+}

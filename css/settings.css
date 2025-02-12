@@ -1,0 +1,120 @@
+main {
+    font-family: var(--second-typo);
+}
+
+header {
+    height: 100px;
+    padding: 10px;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.changes {
+    position: relative;
+    width: 50%;
+    margin: 2px;
+}
+
+#pfp-container {
+    right: 0;
+
+}
+
+.title {
+    background-color: #247563;
+    color: white;
+    text-align: center;
+}
+
+input {
+    color: black;
+    padding: 0.3vh 1vw;
+}
+#tag,#email{
+    color: black;
+    border-radius: 3vh;
+    padding: 0.3vh 1vw;
+    border: 1px solid silver;
+}
+
+#sub {
+    background-color: black;
+    color: white;
+    font-family: var(--second-typo);
+    padding: 0.3vh 1vw;
+    margin: 0 1vw;
+    border: 1.4px solid white;
+    cursor: pointer;
+
+}
+.info{
+    margin: 3vh 0;
+}
+#info {
+    display: inline-block;
+    position: relative;
+    top: 5vh;
+    left: 10%;
+    width: 75%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #247563;
+}
+.input-box{
+    margin-left: 2vw;
+    width: 80vw;
+}
+.other{
+    position: relative;
+    top: 10vh;
+    left: 10%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4vh;
+}
+
+#disc-btn {
+    text-decoration: none;
+    font-size: 25px;
+}
+.logout{
+    aspect-ratio: 1/1;
+    height: 3.6vh;
+}
+
+#deleteAccount {
+    height: 5vh;
+    width: 15vw;
+    right: 0;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    font-family: var(--second-typo);
+    background: #101010;
+    border: 2px solid rgb(143, 2, 2);
+    color: red;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+#deleteAccount:hover {
+    cursor: pointer;
+}
+
+#deleteAccount:hover::after {
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes rotate {
+    0% {
+        --gradient-angle: 0deg;
+    }
+
+    100% {
+        --gradient-angle: 360deg;
+    }
+}

@@ -1,0 +1,20 @@
+<svg width="8" height="300" viewBox="0 0 8 300" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/4999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione-monotone"
+    preserveAspectRatio="xMidYMid meet"
+    fill="#600DB5">
+    <path
+        d="M 4 0
+        q 0 4 4 4
+        q -4 0 -4 4
+        q 0 -4 -4 -4
+        q 4 0 4 -4"
+         />
+    <ellipse cx="4" cy="150" rx="1" ry="135" />
+    <path
+        d="M 4 292
+        q 0 4 4 4
+        q -4 0 -4 4
+        q 0 -4 -4 -4
+        q 4 0 4 -4"
+         />
+</svg>

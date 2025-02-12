@@ -1,0 +1,35 @@
+.container {
+    font-family: var(--second-typo);
+    font-weight: 300;
+    font-size: 34px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+.easy, .medium, .hard {
+    width: 260px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+}
+
+.easy p, .medium p, .hard p {
+    color: black;
+    width: 100%;
+    background-color: grey;
+    text-align: center;
+}
+
+.easy a, .medium a, .hard a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+}

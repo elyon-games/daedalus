@@ -1,0 +1,589 @@
+main {
+    height: 100%;
+    padding-top: 25px;
+}
+
+hr {
+    border-color: gray;
+    margin: 16px;
+}
+
+#tooltip {
+    position: absolute;
+    z-index: 50;
+    padding: 0;
+    max-width: 250px;
+    pointer-events:none;
+    font-family: var(--second-typo);
+    font-size: 70%;
+    opacity: 0;
+}
+
+#tooltip.visible {
+    opacity: 1;
+}
+
+#tooltip hr {
+  margin: 10px;
+}
+
+#tooltip > div {
+    padding: 7px;
+    background-color: black;
+}
+
+#tooltip::before,
+#tooltip::after {
+    position: absolute;
+    display: block;
+    inset: -3px;
+    pointer-events:none;
+}
+
+#fullscreenWrapper,
+#creativeWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#infoContainer, 
+#creativeMenu {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--second-typo);
+}
+
+#infoContainer #inventory {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+}
+
+#infoContainer hr {
+    margin: 15% 8%;
+}
+
+#infoContainer ul {
+    margin-top: 8%;
+    margin-left: 20px;
+}
+
+#canvasContainer {
+    height: min(60vw, 90vh);
+    max-width: min(60vw, 90vh);
+    position: relative;
+    margin: 25px 0;
+    aspect-ratio: 1 / 1;
+}
+
+:fullscreen #canvasContainer {
+    height: 100vh;
+}
+
+#canvasContainer > div,
+#canvasContainer > canvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: inherit;
+}
+
+#guiBtn {
+  position: absolute;
+  display: flex;
+  border: none;
+  background-color: transparent;
+  z-index: 6;
+  width: fit-content;
+  height: fit-content;
+  right: calc(100% + 15px);
+  cursor: pointer;
+}
+
+#guiBtn > svg {
+  stroke: white;
+  stroke-width: 5px;
+  stroke-linecap: round;
+}
+
+#gui {
+    z-index: 6;
+    backdrop-filter: brightness(25%) blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#gui.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#gui button {
+    width: 25%;
+    border: none;
+    cursor: pointer;
+    pointer-events: inherit;
+    animation-duration: 8s;
+    font-family: var(--second-typo);
+}
+
+#gui button::after,
+#gui button::before {
+    inset: -5px;
+    animation-duration: inherit;
+}
+
+#gui #audioRange {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    pointer-events: inherit;
+    width: 25%;
+    gap: 5px;
+}
+
+#gui #audioRange input {
+    background: linear-gradient(to right, #82CFD0 0%, #82CFD0 100%, #fff 100%, #fff 100%);
+    border: solid 1px #82CFD0;
+    border-radius: 8px;
+    width: 100%;
+    height: 7px;
+    outline: none;
+    transition: background 450ms ease-in;
+    appearance: none;
+}
+
+#gui #audioRange input::-webkit-slider-thumb {
+    appearance: none;
+    background-color: var(--accent-theme-color);
+    cursor: ew-resize;
+    width: 15px;
+    box-shadow: 0 0 5px var(--accent-theme-color-2);
+    border-radius: 15px;
+    height: 15px;
+}
+
+#gui button::after {
+    filter: blur(15px);
+}
+
+#overlayCanvas {
+    z-index: 5;
+    pointer-events: none;
+}
+
+#effectsCanvas {
+    z-index: 3;
+    pointer-events: none;
+}
+
+#playerCanvas {
+    z-index: 4;
+    pointer-events: none;
+}
+
+#tileCanvas {
+    z-index: 2;
+    pointer-events: all;
+}
+
+.sourcesContainer {
+    display: none;
+}
+
+h1 {
+    font-family: var(--second-typo);
+    text-align: center;
+}
+
+h2,
+h2 > a {
+    font-style: italic;
+    color: gray;
+    text-align: center;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+}
+
+@keyframes rotation {
+    0% {
+        --gradient-angle: 0deg;
+    } 
+
+    100% {
+        --gradient-angle: 360deg;
+    }
+}
+
+#creativeMenu {
+    width: 30vw;
+}
+
+#creativeMenu > h4 {
+    cursor: pointer;
+}
+
+#creativeMenu > h4::after {
+    content: '';
+    background-image: url(/images/arrow.svg);
+    background-size: contain;
+    display: inline-block;
+    height: 15px;
+    margin-left: 6px;
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    rotate: 180deg;
+    transition: rotate .2s linear;
+}
+
+#creativeMenu > h4.visible::after {
+    rotate: 0deg;
+}
+
+#creativeMenu > div {
+    --height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-height: 0;
+    opacity: 0;
+    overflow: visible;
+    pointer-events: none;
+}
+
+#creativeMenu > h4.visible + div {
+    pointer-events: all;
+    opacity: 1;
+    max-height: var(--height);
+}
+
+#creativeMenu > div > img {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    object-fit:none;
+    object-position: 0 0;
+    box-sizing: content-box;
+    background-color: transparent;
+}
+
+#creativeMenu .selected {
+    filter: drop-shadow(0 0 15px var(--accent-theme-color-2)) drop-shadow(0 0 5px cyan);
+    color: var(--accent-theme-color-2);
+    /* box-shadow: 0 0 25px var(--accent-theme-color-2), 0 0 10px cyan, 0 0 25px var(--accent-theme-color-2), 0 0 50px cyan inset; */
+}
+
+#creativeMenu .floor,
+#creativeMenu .room {
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px;
+    background-color: var(--accent-theme-color);
+    aspect-ratio: 1/1;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    box-sizing: content-box;
+    border: none;
+}
+
+#creativeMenu #addFloor,
+#creativeMenu #addObjective {
+    order: 2;
+}
+
+#creativeMenu textarea,
+#creativeMenu input {
+    border: none;
+    border-bottom: 2px solid var(--accent-theme-color);
+    margin: 5px;
+    padding: 2px 5px;
+    font-family: var(--second-typo);
+    background-color: transparent;
+    resize: none;
+    overflow: hidden;
+    width: 80%;
+    flex-grow: 1;
+}
+
+#creativeMenu textarea:focus-visible,
+#creativeMenu textarea:focus,
+#creativeMenu input:focus-visible,
+#creativeMenu input:focus {
+    outline: none;
+    border-color: var(--accent-theme-color-2);
+    color: var(--accent-theme-color-2);
+}
+
+#creativeMenu #floorSelect {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#creativeMenu #floor,
+#creativeMenu #level {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+#creativeMenu #levelInfo {
+    display: grid;
+    grid-template-columns: auto 4fr;
+    grid-template-rows: auto auto;
+    justify-content: center;
+}
+
+#creativeMenu #levelInfo > label {
+    margin: auto;
+}
+
+#creativeMenu #floor input {
+    max-width: 50px;
+}
+
+#creativeMenu #roomDimensions,
+#creativeMenu #floorDimensions {
+    display: flex;
+    flex-direction: row;
+    text-wrap: nowrap;
+    align-items: center;
+}
+
+#creativeMenu #roomSelect {
+    --nbRoomsX: 3;
+    --nbRoomsY: 3;
+    display: grid;
+    grid-template-columns: repeat(var(--nbRoomsX), 55px);
+    grid-template-rows: repeat(var(--nbRoomsY), 55px);
+}
+
+#creativeMenu .room {
+    margin: auto;
+}
+
+#creativeMenu #objectives {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#creativeMenu #objectives > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#creativeMenu #objectives > div > img {
+    cursor: pointer;
+    height: 24px;
+}
+
+#creativeMenu #objectives #addObjective,
+#creativeMenu .apply {
+    border: none;
+    background-color: var(--accent-theme-color);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#addObjective {
+    align-self: center;
+    width: 25%;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+#creativeMenu button:hover {
+    background-color: var(--accent-theme-color-2) !important;
+    color: white;
+}
+
+#popup {
+    position: fixed;
+    font-family: var(--second-typo);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    gap: 25px;
+    text-align: center;
+    backdrop-filter: brightness(20%);
+}
+
+#popup > * {
+    max-width: min(80vh, 80vw);
+    gap: 10px;
+    justify-content: space-around;
+}
+
+#popup.visible {
+    display: flex;
+}
+
+.submit, 
+.cancel {
+    border: 4px solid var(--accent-theme-color-2);
+    cursor: pointer;
+    background-color: transparent;
+    margin: 5px;
+    padding: 10px;
+    font-family: var(--second-typo);
+    width: fit-content;
+}
+
+.cancel {
+    border-color: rgb(181, 0, 0);
+}
+
+.submit:hover {
+    background-color: var(--accent-theme-color-2);
+}
+
+.cancel:hover,
+#creativeMenu button.cancel:hover {
+    background-color: rgb(181, 0, 0) !important;
+}
+
+#submit {
+    width: fit-content;
+    align-self: center;
+}
+
+#TILE_WALL {
+    object-position: -32px 0 !important;
+}
+
+.loader {
+    position: relative;
+    width: 50px;
+    aspect-ratio: 1/1;
+}
+
+.loaderBox {
+    --animation-time: 2s;
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 20%;
+    animation: loading var(--animation-time) cubic-bezier(0.165, 0.84, 0.44, 1) 0s infinite, colorChange calc(var(--animation-time) * 1) linear 0s infinite;
+}
+
+.loaderBox:nth-child(2) {
+    animation-delay: calc(-1 * var(--animation-time) / 4);
+}
+
+.loaderBox:nth-child(3) {
+    animation-delay: calc(-2 * var(--animation-time) / 4);
+}
+
+.loaderBox:nth-child(4) {
+    animation-delay: calc(-3 * var(--animation-time) / 4);
+}
+
+@keyframes loading {
+    0% {
+        left: 0;
+        top: 0;
+    }
+
+    12.5% {
+        left: 0;
+        top: 0;
+    }
+
+    25% {
+        left: 60%;
+        top: 0;
+    }
+
+    37.5% {
+        left: 60%;
+        top: 0;
+    }
+
+    50% {
+        left: 60%;
+        top: 60%;
+    }
+
+    62.5% {
+        left: 60%;
+        top: 60%;
+    }
+
+    75% {
+        left: 0;
+        top: 60%;
+    }
+
+    87.5% {
+        left: 0;
+        top: 60%;
+    }
+
+    100% {
+        left: 0;
+        top: 0;
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: var(--accent-theme-color-2);
+    }
+
+    50% {
+        background-color: var(--accent-theme-color);
+    }
+
+    100% {
+        background-color: var(--accent-theme-color-2);
+    }
+}
+
+@media (max-width: 992px) {
+    #creativeWrapper {
+        flex-direction: column-reverse;
+    }
+
+    #creativeMenu {
+        width: 80vw;
+    }
+}
